@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';
 const Hero = () => {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+      
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
@@ -14,7 +15,10 @@ const Hero = () => {
           backgroundAttachment: 'fixed'
         }}
       >
+        {/* Existing overlay (optional) */}
         <div className="absolute inset-0 bg-primary-dark/40"></div>
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       {/* Content */}

@@ -44,16 +44,16 @@ const Services = () => {
   return (
     <section 
       id="services" 
-      className="py-20 " 
-      style={{ backgroundColor: 'rgba(58,74,96,0.1)' }} // bg-primary-light/10
+      className="py-20" 
+      style={{ backgroundColor: 'rgba(58,74,96,0.05)' }} // light section bg for contrast
     >
-      <div className="container px-10 mx-auto">
+      <div className="container px-6 md:px-10 mx-auto">
         <div className="text-center mb-16">
           <h2 
             className="text-4xl md:text-5xl font-serif font-bold mb-6"
             data-aos="fade-up" 
             data-aos-duration="1000"
-            style={{ color: '#2D384B' }} // text-primary
+            style={{ color: '#2D384B' }} 
           >
             Our Services
           </h2>
@@ -62,7 +62,7 @@ const Services = () => {
             data-aos="fade-up" 
             data-aos-duration="1000" 
             data-aos-delay="200"
-            style={{ color: '#1F2937' }} // text-primary-dark
+            style={{ color: '#1F2937' }} 
           >
             From concept to completion, we offer comprehensive interior design services 
             tailored to your unique needs and vision.
@@ -73,28 +73,28 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="rounded-2xl p-8 card-hover group"
+              className="rounded-2xl p-8 card-hover group transition-shadow duration-300"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay={index * 100}
-              style={{ backgroundColor: 'rgba(58,74,96,0.2)' }} // bg-primary-light/20
+              style={{ backgroundColor: '#2D384B' }} // dark card background
             >
-              <div style={{ color: '#DDCFCA' }} className="mb-6 group-hover:scale-110 transition-transform duration-300"> {/* text-peach */}
+              <div style={{ color: '#FFFFFF' }} className="mb-6 group-hover:scale-110 transition-transform duration-300">
                 {React.cloneElement(service.icon, { size: 48 })}
               </div>
               
-              <h3 className="text-2xl font-semibold mb-4" style={{ color: '#2D384B' }}> {/* text-primary */}
+              <h3 className="text-2xl font-semibold mb-4" style={{ color: '#FFFFFF' }}>
                 {service.title}
               </h3>
               
-              <p className="mb-6 leading-relaxed" style={{ color: '#1F2937' }}> {/* text-primary-dark */}
+              <p className="mb-6 leading-relaxed" style={{ color: '#E5E7EB' }}> {/* light gray for readability */}
                 {service.description}
               </p>
               
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm" style={{ color: '#1F2937' }}> {/* text-primary-dark */}
-                    <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#DDCFCA' }}></div> {/* bg-peach */}
+                  <li key={featureIndex} className="flex items-center text-sm" style={{ color: '#E5E7EB' }}>
+                    <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#FFFFFF' }}></div> {/* white bullet */}
                     {feature}
                   </li>
                 ))}

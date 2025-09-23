@@ -43,7 +43,7 @@ const Testimonials = () => {
       className="py-8 md:py-20" 
       style={{ backgroundColor: '#2D384B' }} // bg-primary
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-10">
         <div className="text-center mb-16">
           <h2 
             className="text-4xl md:text-5xl font-serif font-bold mb-6"

@@ -5,8 +5,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#2D384B] text-white">
-      <div className="container-custom section-padding">
+    <footer className="bg-[#2D384B] text-white py-8 md:py-16 md:pb-4">
+      <div className="container px-10 mx-auto section-padding">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
@@ -65,13 +65,9 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/30 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-[#DDCFCA] mb-4 md:mb-0">© {currentYear} KRID af LYS. All rights reserved.</p>
-          <div className="flex items-center text-[#DDCFCA]">
-            <span>Made with</span>
-            <Heart className="mx-2 text-red-400 fill-current" size={16} />
-            <span>in Dehradun</span>
-          </div>
+        <div className="border-t border-white/30 pt-3 flex flex-col md:flex-row justify-center items-center">
+          <p className="text-[#DDCFCA] mb-4 md:mb-0">© {currentYear} KRID af LYS. All rights reserved. | Powered by <a href="https://rankmantra.com/" target='_blank'>Rankmantra</a> </p>
+          
         </div>
       </div>
     </footer>
