@@ -56,7 +56,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 md:px-10 grid md:grid-cols-10 grid-cols-1 gap-12 items-center">
 
         {/* Left Side Content */}
-        <div className="lg:col-span-4 md:mb-8 lg:mb-0" data-aos="fade-right" data-aos-duration="1000">
+        <div className="lg:col-span-4 md:mb-8 lg:mb-0" data-aos="fade-up" data-aos-duration="1000">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-white">
             What Our Clients Say
           </h2>
@@ -69,7 +69,7 @@ const Testimonials = () => {
         </div>
 
         {/* Right Side Slider */}
-        <div className="lg:col-span-6" data-aos="fade-left" data-aos-duration="1000">
+        <div className="lg:col-span-6" data-aos="fade-up" data-aos-duration="1000">
           <Slider {...settings}>
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="px-2 sm:px-4">
