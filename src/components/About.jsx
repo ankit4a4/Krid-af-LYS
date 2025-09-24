@@ -11,14 +11,14 @@ const About = () => {
             <img
               src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
               alt="Interior"
-              className="rounded-2xl md:absolute md:top-0 md:left-0 shadow-2xl md:h-[350px] md:w-[49%] object-cover"
+              className="rounded-2xl md:absolute md:top-0 md:left-0 shadow-2xl md:h-[300px] md:w-[49%] object-cover"
             />
           </div>
           <div className="w-1/2  hidden md:flex items-end">
             <img
               src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
               alt="Founder"
-              className="rounded-2xl  md:absolute md:bottom-0 md:right-0 shadow-2xl md:h-[350px] md:w-[49%] object-cover"
+              className="rounded-2xl  md:absolute md:bottom-0 md:right-0 shadow-2xl md:h-[300px] md:w-[49%] object-cover"
             />
           </div>
         </div>
