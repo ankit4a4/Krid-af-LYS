@@ -53,7 +53,7 @@ const Testimonials = () => {
 
   return (
     <section id="testimonials" className="py-8 md:py-20 bg-[#2D384B]">
-      <div className="container mx-auto px-4 md:px-10 grid md:grid-cols-2 grid-cols-1 gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-10 grid md:grid-cols-10 grid-cols-1 gap-12 items-center">
 
         {/* Left Side Content */}
         <div className="lg:col-span-4 md:mb-8 lg:mb-0" data-aos="fade-right" data-aos-duration="1000">

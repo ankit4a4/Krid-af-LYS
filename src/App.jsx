@@ -24,7 +24,6 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      {/* <Header /> */}
       <Hero />
       <About />
       <Services />
@@ -32,7 +31,6 @@ function App() {
       <Testimonials />
       <Team />
       <Contact />
-      {/* <Footer /> */}
     </div>
   );
 }
