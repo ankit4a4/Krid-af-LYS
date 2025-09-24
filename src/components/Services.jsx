@@ -18,7 +18,7 @@ const Services = () => {
     {
       icon: <Camera />,
       title: 'Home Staging',
-      description: 'Strategic staging to maximize your property\'s market appeal',
+      description: "Strategic staging to maximize your property's market appeal",
       features: ['Market Analysis', 'Furniture Rental', 'Photography Ready', 'Quick Turnaround']
     },
     {
@@ -42,67 +42,79 @@ const Services = () => {
   ];
 
   return (
-    <section 
-      id="services" 
-      className="py-20" 
-      style={{ backgroundColor: 'rgba(58,74,96,0.05)' }} // light section bg for contrast
+    <section
+      id="services"
+      className="py-8 md:py-20 relative"
+      style={{ backgroundColor: '#2D384B' }} // dark section bg
     >
-      <div className="container px-6 md:px-10 mx-auto">
-        <div className="text-center mb-16">
-          <h2 
-            className="text-4xl md:text-5xl font-serif font-bold mb-6"
-            data-aos="fade-up" 
+      <div className="container px-6 md:px-10 mx-auto relative z-10">
+        <div className="text-center mb-4 md:mb-16">
+          <h2
+            className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white"
+            data-aos="fade-up"
             data-aos-duration="1000"
-            style={{ color: '#2D384B' }} 
           >
             Our Services
           </h2>
-          <p 
-            className="text-lg max-w-2xl mx-auto"
-            data-aos="fade-up" 
-            data-aos-duration="1000" 
+          <p
+            className="text-lg max-w-2xl mx-auto text-gray-200"
+            data-aos="fade-up"
+            data-aos-duration="1000"
             data-aos-delay="200"
-            style={{ color: '#1F2937' }} 
           >
-            From concept to completion, we offer comprehensive interior design services 
+            From concept to completion, we offer comprehensive interior design services
             tailored to your unique needs and vision.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <div
               key={index}
-              className="rounded-2xl p-8 card-hover group transition-shadow duration-300"
+              className="bg-white/80 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay={index * 100}
-              style={{ backgroundColor: '#2D384B' }} // dark card background
             >
-              <div style={{ color: '#FFFFFF' }} className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                {React.cloneElement(service.icon, { size: 48 })}
+              {/* Icon Circle */}
+              <div className="mb-6">
+                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#2D384B] to-[#4B5C72] text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                  {React.cloneElement(service.icon, { size: 28 })}
+                </div>
               </div>
-              
-              <h3 className="text-2xl font-semibold mb-4" style={{ color: '#FFFFFF' }}>
+
+              {/* Title */}
+              <h3 className="text-2xl font-semibold mb-4 text-[#2D384B] group-hover:text-[#1E2A3A] transition-colors">
                 {service.title}
               </h3>
-              
-              <p className="mb-6 leading-relaxed" style={{ color: '#E5E7EB' }}> {/* light gray for readability */}
+
+              {/* Description */}
+              <p className="mb-6 leading-relaxed text-gray-600">
                 {service.description}
               </p>
-              
+
+              {/* Features */}
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm" style={{ color: '#E5E7EB' }}>
-                    <div className="w-2 h-2 rounded-full mr-3" style={{ backgroundColor: '#FFFFFF' }}></div> {/* white bullet */}
+                  <li key={featureIndex} className="flex items-center text-sm text-gray-700">
+                    <div className="w-2.5 h-2.5 rounded-full mr-3 bg-[#2D384B]"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
+
+              {/* Decorative gradient line on hover */}
+              <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-[#2D384B] to-[#4B5C72] group-hover:w-full transition-all duration-500"></div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* subtle overlay */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.05), transparent)' }}
+      ></div>
     </section>
   );
 };

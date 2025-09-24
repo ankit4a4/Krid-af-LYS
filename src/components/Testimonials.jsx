@@ -1,5 +1,8 @@
 import React from 'react';
+import Slider from 'react-slick';
 import { Star, Quote } from 'lucide-react';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
   const testimonials = [
@@ -9,7 +12,7 @@ const Testimonials = () => {
       role: 'Homeowner',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
       rating: 5,
-      text: 'KRID af LYS transformed our home beyond our wildest dreams. Tanvi\'s attention to detail and creative vision made our space both beautiful and functional. We couldn\'t be happier!'
+      text: 'Studio Kal transformed our home beyond our wildest dreams. Tanvi\'s attention to detail and creative vision made our space both beautiful and functional. We couldn\'t be happier!'
     },
     {
       id: 2,
@@ -17,7 +20,7 @@ const Testimonials = () => {
       role: 'Business Owner',
       image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
       rating: 5,
-      text: 'The team at KRID af LYS redesigned our office space, and the results exceeded our expectations. Our employees love the new environment, and productivity has increased significantly.'
+      text: 'The team at Studio Kal redesigned our office space, and the results exceeded our expectations. Our employees love the new environment, and productivity has increased significantly.'
     },
     {
       id: 3,
@@ -25,7 +28,7 @@ const Testimonials = () => {
       role: 'Real Estate Agent',
       image: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop',
       rating: 5,
-      text: 'I work with KRID af LYS for all my home staging projects. Their ability to make properties show-ready quickly and effectively has helped me close deals faster. Highly recommended!'
+      text: 'I work with Studio Kal for all my home staging projects. Their ability to make properties show-ready quickly and effectively has helped me close deals faster. Highly recommended!'
     },
     {
       id: 4,
@@ -37,75 +40,70 @@ const Testimonials = () => {
     }
   ];
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    arrows: false,
+  };
+
   return (
-    <section 
-      id="testimonials" 
-      className="py-8 md:py-20" 
-      style={{ backgroundColor: '#2D384B' }} // bg-primary
-    >
-      <div className="container mx-auto px-10">
-        <div className="text-center mb-16">
-          <h2 
-            className="text-4xl md:text-5xl font-serif font-bold mb-6"
-            data-aos="fade-up" 
-            data-aos-duration="1000"
-            style={{ color: '#FFFFFF' }} // text-white
-          >
+    <section id="testimonials" className="py-8 md:py-20 bg-[#2D384B]">
+      <div className="container mx-auto px-4 md:px-10 grid md:grid-cols-2 grid-cols-1 gap-12 items-center">
+
+        {/* Left Side Content */}
+        <div className="lg:col-span-4 md:mb-8 lg:mb-0" data-aos="fade-right" data-aos-duration="1000">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-4 sm:mb-6 text-white">
             What Our Clients Say
           </h2>
-          <p 
-            className="text-lg max-w-2xl mx-auto"
-            data-aos="fade-up" 
-            data-aos-duration="1000" 
-            data-aos-delay="200"
-            style={{ color: '#DDCFCA' }} // text-peach
-          >
-            Don't just take our word for it. Here's what our satisfied clients 
-            have to say about working with KRID af LYS.
+          <p className="text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 text-[#DDCFCA]">
+            Don't just take our word for it. Here's what our satisfied clients have to say about working with Studio Kal.
+          </p>
+          <p className="text-sm sm:text-base leading-relaxed text-[#DDCFCA]">
+            We pride ourselves on creating spaces that truly reflect our clients' personalities while ensuring functionality and timeless elegance. Your satisfaction is our biggest achievement.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              className="rounded-2xl p-8 card-hover relative"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay={index * 100}
-              style={{ backgroundColor: '#FFFFFF' }} // bg-white
-            >
-              <div className="absolute top-4 right-4" style={{ color: 'rgba(221,207,202,0.2)' }}> {/* text-peach/20 */}
-                <Quote size={48} />
-              </div>
+        {/* Right Side Slider */}
+        <div className="lg:col-span-6" data-aos="fade-left" data-aos-duration="1000">
+          <Slider {...settings}>
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="px-2 sm:px-4">
+                <div className="relative bg-white rounded-2xl p-6 sm:p-8 shadow-lg">
 
-              <div className="flex items-center mb-6">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-lg" style={{ color: '#2D384B' }}> {/* text-primary */}
-                    {testimonial.name}
-                  </h4>
-                  <p className="text-sm" style={{ color: '#4B5563' }}> {/* text-neutral-600 */}
-                    {testimonial.role}
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 text-gray-300">
+                    <Quote size={36} className="sm:text-[48px]" />
+                  </div>
+
+                  <div className="flex items-center mb-4 sm:mb-6">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover mr-3 sm:mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-base sm:text-lg text-[#2D384B]">{testimonial.name}</h4>
+                      <p className="text-xs sm:text-sm text-gray-500">{testimonial.role}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex mb-2 sm:mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} size={16} className="text-yellow-400 sm:text-[20px]" />
+                    ))}
+                  </div>
+
+                  <p className="leading-relaxed italic text-gray-700 text-sm sm:text-base">
+                    "{testimonial.text}"
                   </p>
                 </div>
               </div>
-
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} size={20} style={{ color: '#FACC15' }} /> 
-                ))}
-              </div>
-
-              <p className="leading-relaxed italic" style={{ color: '#374151' }}> {/* text-neutral-700 */}
-                "{testimonial.text}"
-              </p>
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
       </div>
     </section>

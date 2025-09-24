@@ -8,7 +8,7 @@ const Team = () => {
       name: 'Tanvi Porwal',
       role: 'Founder & Lead Designer',
       image: 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      bio: 'With over 3 years of experience in interior design, Tanvi brings creativity, expertise, and a keen eye for detail to every project. Her passion for transforming spaces has made her a sought-after designer in the region.',
+      bio: 'With over 3 years of experience in interior design, Tanvi brings creativity, expertise, and a keen eye for detail to every project.',
       specialties: ['Residential Design', 'Space Planning', 'Color Consultation', 'Project Management'],
       contact: { email: 'kal@kridaflys.com', phone: '+91 7983109747' }
     },
@@ -17,7 +17,7 @@ const Team = () => {
       name: 'Rohit Sharma',
       role: 'Senior Interior Designer',
       image: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      bio: 'Rohit specializes in creating elegant and functional spaces. With an eye for detail, he ensures that every project meets the highest standards.',
+      bio: 'Rohit specializes in creating elegant and functional spaces. With an eye for detail, he ensures every project meets highest standards.',
       specialties: ['Commercial Design', 'Furniture Selection', 'Lighting Design', 'Project Execution'],
       contact: { email: 'rohit@kridaflys.com', phone: '+91 9876543210' }
     },
@@ -26,82 +26,72 @@ const Team = () => {
       name: 'Anjali Mehta',
       role: 'Interior Stylist',
       image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop',
-      bio: 'Anjali focuses on styling and decor, bringing creativity and personality into every project. Her keen sense of aesthetics makes interiors truly unique.',
+      bio: 'Anjali focuses on styling and decor, bringing creativity and personality into every project.',
       specialties: ['Styling', 'Artwork Placement', 'Textile Coordination', 'Accessory Selection'],
       contact: { email: 'anjali@kridaflys.com', phone: '+91 9123456789' }
     }
   ];
 
   return (
-    <section id="team" className="py-8 md:py-20 bg-white">
-      <div className="container mx-auto px-6 md:px-10">
-        <div className="text-center mb-16">
-          <h2 
-            className="text-4xl md:text-5xl font-serif font-bold mb-6"
-            data-aos="fade-up" 
+    <section id="team" className="py-12 md:py-20 bg-[#ddcfca]">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-12">
+          <h2
+            className="text-3xl md:text-4xl font-serif font-bold mb-4 text-black"
+            data-aos="fade-up"
             data-aos-duration="1000"
-            style={{ color: '#2D384B' }}
           >
             Meet Our Team
           </h2>
-          <p 
-            className="text-lg max-w-2xl mx-auto"
-            data-aos="fade-up" 
-            data-aos-duration="1000" 
+          <p
+            className="text-gray-800 text-base max-w-xl mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000"
             data-aos-delay="200"
-            style={{ color: '#4B5563' }}
           >
-            Get to know the talented professionals behind KRID af LYS who bring 
+            Get to know the talented professionals behind Studio Kal who bring
             passion, creativity, and expertise to every project.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {team.map((member, index) => (
             <div
               key={member.id}
-              className="rounded-2xl overflow-hidden card-hover"
+              className="bg-gray-900 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay={index * 100}
-              style={{ backgroundColor: '#F9FAFB' }}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-60 object-cover transition-transform duration-700 hover:scale-105"
+                  className="w-full h-48 object-cover"
                 />
-                <div
-                  className="absolute inset-0"
-                  style={{ background: 'linear-gradient(to top, rgba(45,56,75,0.2), transparent)' }}
-                ></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
-              
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold mb-2" style={{ color: '#2D384B' }}>
+
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-white mb-1">
                   {member.name}
                 </h3>
-                <p className="font-medium mb-4" style={{ color: '#DDCFCA' }}>
+                <p className="text-[#DDCFCA] text-sm font-medium mb-3">
                   {member.role}
                 </p>
-                <p className="mb-6 leading-relaxed" style={{ color: '#4B5563' }}>
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                   {member.bio}
                 </p>
 
-                <div className="mb-6">
-                  <h4 className="font-semibold mb-3" style={{ color: '#2D384B' }}>
+                <div className="mb-4">
+                  <h4 className="font-semibold text-white text-sm mb-2">
                     Specialties:
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1">
                     {member.specialties.map((specialty, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 text-sm rounded-full"
-                        style={{
-                          backgroundColor: 'rgba(221,207,202,0.2)',
-                          color: '#2D384B'
-                        }}
+                        className="px-2 py-1 text-xs rounded-md bg-gray-800 text-gray-300"
                       >
                         {specialty}
                       </span>
@@ -109,25 +99,21 @@ const Team = () => {
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <div className="flex items-center" style={{ color: '#4B5563' }}>
-                    <Mail size={16} className="mr-3" style={{ color: '#DDCFCA' }} />
-                    <a 
+                <div className="space-y-2 pt-2 border-t border-gray-700">
+                  <div className="flex items-center text-gray-300">
+                    <Mail size={14} className="mr-2 text-[#DDCFCA]" />
+                    <a
                       href={`mailto:${member.contact.email}`}
-                      style={{ color: '#4B5563', transition: 'color 0.3s' }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = '#DDCFCA'}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#4B5563'}
+                      className="text-sm hover:text-[#DDCFCA] transition-colors"
                     >
                       {member.contact.email}
                     </a>
                   </div>
-                  <div className="flex items-center" style={{ color: '#4B5563' }}>
-                    <Phone size={16} className="mr-3" style={{ color: '#DDCFCA' }} />
-                    <a 
+                  <div className="flex items-center text-gray-300">
+                    <Phone size={14} className="mr-2 text-[#DDCFCA]" />
+                    <a
                       href={`tel:${member.contact.phone}`}
-                      style={{ color: '#4B5563', transition: 'color 0.3s' }}
-                      onMouseEnter={(e) => e.currentTarget.style.color = '#DDCFCA'}
-                      onMouseLeave={(e) => e.currentTarget.style.color = '#4B5563'}
+                      className="text-sm hover:text-[#DDCFCA] transition-colors"
                     >
                       {member.contact.phone}
                     </a>

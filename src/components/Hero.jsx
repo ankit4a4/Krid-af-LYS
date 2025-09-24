@@ -18,11 +18,13 @@ const Hero = () => {
         {/* Existing overlay (optional) */}
         <div className="absolute inset-0 bg-primary-dark/40"></div>
         {/* Black overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
       {/* Content */}
+
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+      <img src="/whiteLogo.png" className='h-[200px] mx-auto' alt="" />
         <h1 
           className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in-up"
           data-aos="fade-up" 
@@ -57,12 +59,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-light/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary-light/70 rounded-full mt-2 animate-float"></div>
-        </div>
-      </div>
     </section>
   );
 };

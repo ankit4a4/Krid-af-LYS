@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from "../../public/logo.png"
+import logo2 from "../../public/WhiteLogo.png"
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,24 +28,19 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-white/95 backdrop-blur-md shadow-lg'
+        : 'bg-transparent'
+        }`}
     >
       <nav className="container mx-auto px-10">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-0">
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-2xl font-serif font-bold">
-              <span
-                className={`transition-colors duration-300 ${
-                  isScrolled ? 'text-[#2D384B]' : 'text-[#FFFFFF]'
-                }`}
-              >
-                KRID af LYS
-              </span>
+              <img src={
+                isScrolled ? logo : logo2
+              } className='h-20 py-2' alt="" />
             </div>
           </div>
 
@@ -53,9 +50,8 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-colors duration-300 hover:text-[#DDCFCA] ${
-                  isScrolled ? 'text-[#1F2937]' : 'text-[#FFFFFF]'
-                }`}
+                className={`font-medium transition-colors duration-300 hover:text-[#DDCFCA] ${isScrolled ? 'text-[#1F2937]' : 'text-[#FFFFFF]'
+                  }`}
               >
                 {link.label}
               </a>
@@ -64,9 +60,8 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${
-              isScrolled ? 'text-[#2D384B]' : 'text-[#FFFFFF]'
-            }`}
+            className={`lg:hidden p-2 ${isScrolled ? 'text-[#2D384B]' : 'text-[#FFFFFF]'
+              }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

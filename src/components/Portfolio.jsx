@@ -61,7 +61,7 @@ const Portfolio = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="portfolio" className=" py-8 md:py-20" style={{ backgroundColor: '#F9FAFB' }}> {/* bg-neutral-50 */}
+    <section id="portfolio" className=" py-8 md:py-20" style={{ backgroundColor: '#ddcfca' }}> {/* bg-neutral-50 */}
       <div className="container mx-auto px-10">
         <div className="text-center mb-16">
           <h2 

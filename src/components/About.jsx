@@ -1,95 +1,53 @@
-import React from 'react';
-import { Award, Users, Star, Clock } from 'lucide-react';
+import React from "react";
 
 const About = () => {
-  const stats = [
-    { icon: <Award />, number: '50+', label: 'Projects Completed' },
-    { icon: <Users />, number: '100+', label: 'Happy Clients' },
-    { icon: <Star />, number: '5', label: 'Star Rating' },
-    { icon: <Clock />, number: '3+', label: 'Years Experience' }
-  ];
-
   return (
-    <section id="about" className="" style={{ backgroundColor: '#F9FAFB' }}>
-      <div className="py-20 px-6 md:px-10 container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
-          {/* Content */}
-          <div data-aos="fade-up" data-aos-duration="1000">
-            <h2
-              className="text-4xl md:text-5xl font-serif font-bold mb-6"
-              style={{ color: '#2D384B' }} 
-            >
-              About KRID af LYS
-            </h2>
-            <p
-              className="text-lg mb-6 leading-relaxed"
-              style={{ color: '#4B5563' }} 
-            >
-              Founded by Tanvi Porwal, KRID af LYS is a premier interior design studio
-              dedicated to creating spaces that inspire and delight. Our philosophy centers
-              on the belief that great design should be both beautiful and functional.
-            </p>
-            <p
-              className="text-lg mb-8 leading-relaxed"
-              style={{ color: '#4B5563' }} 
-            >
-              We specialize in residential and commercial interior design, bringing together
-              creativity, expertise, and attention to detail to transform ordinary spaces
-              into extraordinary environments.
-            </p>
+    <section id="about" className="bg-[#DDCFCA] py-8 md:py-20 px-6 md:px-10">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-4 md:gap-16 ">
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center"
-                  data-aos="fade-up"
-                  data-aos-duration="1000"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="mb-2 flex justify-center" style={{ color: '#000000' }}>
-                    {stat.icon}
-                  </div>
-                  <div className="text-2xl font-bold" style={{ color: '#2D384B' }}>
-                    {stat.number}
-                  </div>
-                  <div className="text-sm" style={{ color: '#4B5563' }}>
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* Images Left Side */}
+        <div className="flex gap-6 relative ">
+          <div className="md:w-1/2">
+            <img
+              src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              alt="Interior"
+              className="rounded-2xl md:absolute md:top-0 md:left-0 shadow-2xl md:h-[350px] md:w-[49%] object-cover"
+            />
           </div>
-
-          {/* Image */}
-          <div
-            className="relative"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <img
-                src="https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
-                alt="Modern interior design"
-                className="w-full h-96 object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div
-                className="absolute inset-0"
-                style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.3), transparent)' }}
-              ></div>
-            </div>
-
-            {/* Floating Card */}
-            <div
-              className="absolute -bottom-6 -left-6 p-6 rounded-xl shadow-xl animate-float"
-              style={{ backgroundColor: '#FFFFFF' }}
-            >
-              <div className="text-2xl font-bold" style={{ color: '#2D384B' }}>Design</div>
-              <div style={{ color: '#000000' }}>Excellence</div>
-            </div>
+          <div className="w-1/2  hidden md:flex items-end">
+            <img
+              src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              alt="Founder"
+              className="rounded-2xl  md:absolute md:bottom-0 md:right-0 shadow-2xl md:h-[350px] md:w-[49%] object-cover"
+            />
           </div>
+        </div>
+
+        {/* Content Right Side */}
+        <div>
+          <p className="uppercase text-sm tracking-widest mb-3 text-[#2D384B]">
+            The Company
+          </p>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-[#2D384B]">
+            About Studio Kal <span className="italic">&amp; The Team</span>
+          </h2>
+          <p className="text-lg leading-relaxed mb-4 text-[#2D384B]/80">
+            Studio Kal is a premier interior design studio dedicated to crafting
+            timeless, functional, and luxurious interiors. Every project we take on
+            is guided by a deep passion for design, attention to detail, and a
+            commitment to excellence. From concept to execution, we ensure that
+            every space tells a unique story and reflects the personality of those
+            who inhabit it.
+          </p>
+          <p className="text-lg leading-relaxed mb-4 text-[#2D384B]/80">
+            With years of experience, our team specializes in residential, commercial,
+            and hospitality design. Whether it’s creating warm and inviting homes,
+            sophisticated corporate offices, or statement-making retail spaces,
+            our approach blends creativity with functionality. Each design is tailored
+            to not only look stunning but also enhance the way people live and work.
+          </p>
+
+         
         </div>
       </div>
     </section>
