@@ -1,42 +1,47 @@
 import React from 'react';
-import { Home, Palette, Camera, Settings, Lightbulb, PaintBucket } from 'lucide-react';
+import img1 from "../../public/images/Interior Design.webp"
+import img2 from "../../public/images/Interior Styling.jpg"
+import img3 from "../../public/images/Home Staging.jpg"
+import img4 from "../../public/images/Project Management.webp"
+import img5 from "../../public/images/Design Consultation.jpg"
+import img6 from "../../public/images/Color Consultation.png"
 
 const Services = () => {
   const services = [
     {
-      icon: <Home />,
+      image: img1,
       title: 'Interior Design',
-      description: 'Complete interior design solutions for residential and commercial spaces',
+      description: 'Complete interior design solutions for residential and commercial spaces. Our team begins by understanding your lifestyle, preferences, and the functionality you require from each space. We provide meticulous space planning, create harmonious color schemes, select the perfect furniture, and design layouts that maximize comfort and aesthetics. Using advanced 3D visualization, we bring your vision to life before execution. Every project is tailored to your unique taste, ensuring a perfect blend of style, functionality, and elegance.',
       features: ['Space Planning', 'Color Schemes', 'Furniture Selection', '3D Visualization']
     },
     {
-      icon: <Palette />,
+      image: img2,
       title: 'Interior Styling',
-      description: 'Professional styling services to enhance your existing space',
+      description: 'Professional styling services to enhance your existing space. From accessory selection to artwork placement, textile coordination, and final touches, we transform your interiors into a cohesive and stylish environment. Each element is carefully curated to reflect your personality and complement the overall design of your home or office.',
       features: ['Accessory Selection', 'Artwork Placement', 'Textile Coordination', 'Final Touches']
     },
     {
-      icon: <Camera />,
+      image: img3,
       title: 'Home Staging',
-      description: "Strategic staging to maximize your property's market appeal",
+      description: "Strategic home staging to maximize your property’s market appeal. We analyze the market trends, choose the right furniture, arrange spaces for optimal flow, and make it photography-ready. Our goal is to highlight your property’s strengths, attract potential buyers, and help you sell faster at the best price.",
       features: ['Market Analysis', 'Furniture Rental', 'Photography Ready', 'Quick Turnaround']
     },
     {
-      icon: <Settings />,
+      image: img4,
       title: 'Project Management',
-      description: 'End-to-end project coordination and execution',
+      description: 'End-to-end project coordination and execution. We manage timelines, coordinate vendors, oversee quality control, and monitor budgets. Our proactive approach ensures projects are delivered on time, within budget, and to the highest standards. From concept to completion, we handle every detail so you can enjoy a stress-free experience.',
       features: ['Timeline Management', 'Vendor Coordination', 'Quality Control', 'Budget Oversight']
     },
     {
-      icon: <Lightbulb />,
+      image: img5,
       title: 'Design Consultation',
-      description: 'Expert advice and guidance for your design projects',
+      description: 'Expert advice and guidance for your design projects. We provide personalized design direction, help select the best materials, optimize layouts, and solve practical design challenges. Our consultations empower you to make informed decisions and create spaces that are beautiful, functional, and reflective of your style.',
       features: ['Design Direction', 'Material Selection', 'Layout Optimization', 'Problem Solving']
     },
     {
-      icon: <PaintBucket />,
+      image: img6,
       title: 'Color Consultation',
-      description: 'Professional color schemes and paint selection',
+      description: 'Professional color schemes and paint selection services. We study color psychology, coordinate accents, plan lighting integration, and suggest palettes that elevate your interiors. Whether for a single room or an entire property, our color consultation ensures a harmonious and visually appealing result.',
       features: ['Color Psychology', 'Paint Selection', 'Accent Planning', 'Lighting Integration']
     }
   ];
@@ -45,76 +50,65 @@ const Services = () => {
     <section
       id="services"
       className="py-8 md:py-20 relative"
-      style={{ backgroundColor: '#2D384B' }} // dark section bg
+      style={{ backgroundColor: '#ffffff' }} // white background
     >
       <div className="container px-6 md:px-10 mx-auto relative z-10">
+        {/* Section Header */}
         <div className="text-center mb-4 md:mb-16">
-          <h2
-            className="text-4xl md:text-5xl font-serif font-bold mb-6 text-white"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-          >
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-[#2D384B]"
+            data-aos="fade-up" data-aos-duration="1000">
             Our Services
           </h2>
-          <p
-            className="text-lg max-w-2xl mx-auto text-gray-200"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-delay="200"
-          >
+          <p className="text-lg max-w-2xl mx-auto text-gray-700"
+            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             From concept to completion, we offer comprehensive interior design services
             tailored to your unique needs and vision.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Services List */}
+        <div className="space-y-16 md:space-y-24">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white/80 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden"
+              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-12`}
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay={index * 100}
             >
-              {/* Icon Circle */}
-              <div className="mb-6">
-                <div className="w-16 h-16 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#2D384B] to-[#4B5C72] text-white shadow-md group-hover:scale-110 transition-transform duration-300">
-                  {React.cloneElement(service.icon, { size: 28 })}
-                </div>
+              {/* Image Section */}
+              <div className="w-full md:w-1/2">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-64 md:h-80 object-cover rounded-md"
+                />
               </div>
 
-              {/* Title */}
-              <h3 className="text-2xl font-semibold mb-4 text-[#2D384B] group-hover:text-[#1E2A3A] transition-colors">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <p className="mb-6 leading-relaxed text-gray-600">
-                {service.description}
-              </p>
-
-              {/* Features */}
-              <ul className="space-y-2">
-                {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-gray-700">
-                    <div className="w-2.5 h-2.5 rounded-full mr-3 bg-[#2D384B]"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Decorative gradient line on hover */}
-              <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-[#2D384B] to-[#4B5C72] group-hover:w-full transition-all duration-500"></div>
+              {/* Content Section */}
+              <div className="w-full md:w-1/2">
+                <h3 className="text-2xl font-semibold mb-4 text-[#2D384B]">
+                  {service.title}
+                </h3>
+                <p className="leading-relaxed text-gray-700 mb-4">
+                  {service.description}
+                </p>
+                {/* Key Points */}
+                <div className="flex flex-wrap gap-2">
+                  {service.features.map((feature, fIndex) => (
+                    <span
+                      key={fIndex}
+                      className="bg-[#2D384B] text-white text-sm px-3 py-1 rounded-full"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </div>
-
-      {/* subtle overlay */}
-      <div
-        className="absolute inset-0"
-        style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.05), transparent)' }}
-      ></div>
     </section>
   );
 };

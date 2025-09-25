@@ -24,11 +24,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg'
-          : 'bg-transparent'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-white/95 backdrop-blur-md shadow-lg'
+        : 'bg-transparent'
+        }`}
     >
       <nav className="container mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between py-2">
@@ -41,16 +40,14 @@ const Header = () => {
             />
             <div className="leading-tight">
               <p
-                className={`text-xl md:text-2xl font-bold tracking-wide transition-colors duration-300 ${
-                  isScrolled ? 'text-[#1F2937]' : 'text-white'
-                }`}
+                className={`text-xl md:text-2xl font-bold tracking-wide transition-colors duration-300 ${isScrolled ? 'text-[#1F2937]' : 'text-white'
+                  }`}
               >
                 Studio Kal
               </p>
               <p
-                className={`text-sm md:text-base font-medium transition-colors duration-300 ${
-                  isScrolled ? 'text-[#4B5563]' : 'text-gray-200'
-                }`}
+                className={`text-sm md:text-base font-medium transition-colors duration-300 ${isScrolled ? 'text-[#4B5563]' : 'text-gray-200'
+                  }`}
               >
                 Crafting Your Future Space
               </p>
@@ -63,9 +60,8 @@ const Header = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-colors duration-300 hover:text-[#DDCFCA] ${
-                  isScrolled ? 'text-[#1F2937]' : 'text-[#FFFFFF]'
-                }`}
+                className={`font-medium transition-colors duration-300 hover:text-[#DDCFCA] ${isScrolled ? 'text-[#1F2937]' : 'text-[#FFFFFF]'
+                  }`}
               >
                 {link.label}
               </a>
@@ -74,9 +70,8 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${
-              isScrolled ? 'text-[#2D384B]' : 'text-[#FFFFFF]'
-            }`}
+            className={`lg:hidden p-2 ${isScrolled ? 'text-[#2D384B]' : 'text-[#FFFFFF]'
+              }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
