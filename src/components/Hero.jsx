@@ -24,7 +24,6 @@ const Hero = () => {
       {/* Content */}
 
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-      <img src="/whiteLogo.png" className='h-[200px] mx-auto' alt="" />
         <h1 
           className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in-up"
           data-aos="fade-up" 

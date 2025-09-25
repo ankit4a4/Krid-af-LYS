@@ -40,7 +40,7 @@ const Contact = () => {
     { 
       icon: <Clock className="text-[#2D384B]" />, 
       title: 'Working Hours', 
-      info: 'Mon - Sat: 9AM - 6PM', 
+      info: 'Mon - Sat: 10AM - 6PM', 
       action: '#',
       bgColor: 'bg-[#DDCFCA]/40'
     }

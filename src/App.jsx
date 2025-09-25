@@ -24,13 +24,15 @@ function App() {
 
   return (
     <div className="min-h-screen">
+    <Header />
       <Hero />
       <About />
       <Services />
       <Portfolio />
-      <Testimonials />
-      <Team />
+      {/* <Testimonials /> */}
+      {/* <Team /> */}
       <Contact />
+
     </div>
   );
 }
