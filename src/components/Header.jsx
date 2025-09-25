@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from "/public/logo.png"
-import logo2 from "/public/WhiteLogo.png"
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,7 +35,7 @@ const Header = () => {
           {/* Logo + Company Name */}
           <div className="flex items-center space-x-3">
             <img
-              src={isScrolled ? logo : logo2}
+              src={isScrolled ? "/logo.png" : "/logo2.png"}
               className="h-14 md:h-16"
               alt="Company Logo"
             />
