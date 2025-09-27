@@ -16,9 +16,9 @@ const Header = () => {
 
   const navLinks = [
     { href: '#hero', label: 'Home' },
-    { href: '#portfolio', label: 'Project' },
-    { href: '#services', label: 'Services' },
     { href: '#about', label: 'About' },
+    { href: '#services', label: 'Services' },
+    { href: '#portfolio', label: 'Portfolio' },
     { href: '#contact', label: 'Contact' }
   ];
 
@@ -29,13 +29,13 @@ const Header = () => {
         : 'bg-transparent'
         }`}
     >
-      <nav className="container mx-auto px-6 lg:px-10">
+      <nav className="container mx-auto px-6">
         <div className="flex items-center justify-between py-2">
           {/* Logo + Company Name */}
           <div className="flex items-center space-x-3">
             <img
               src={isScrolled ? "/logo.png" : "/logo2.png"}
-              className="h-14 md:h-16"
+              className="h-14 md:h-22"
               alt="Company Logo"
             />
             <div className="leading-tight">

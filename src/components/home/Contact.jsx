@@ -16,43 +16,43 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { 
-      icon: <Mail className="text-[#2D384B]" />, 
-      title: 'Email Us', 
-      info: 'kal@kridaflys.com', 
+    {
+      icon: <Mail className="text-[#2D384B]" />,
+      title: 'Email Us',
+      info: 'kal@kridaflys.com',
       action: 'mailto:kal@kridaflys.com',
       bgColor: 'bg-[#DDCFCA]/40'
     },
-    { 
-      icon: <Phone className="text-[#2D384B]" />, 
-      title: 'Call Us', 
-      info: '+91 7983109747', 
+    {
+      icon: <Phone className="text-[#2D384B]" />,
+      title: 'Call Us',
+      info: '+91 7983109747',
       action: 'tel:+917983109747',
       bgColor: 'bg-[#DDCFCA]/40'
     },
-    { 
-      icon: <MapPin className="text-[#2D384B]" />, 
-      title: 'Visit Us', 
-      info: 'Abhishek Tower, 1 Subhash Road, Dehradun, Uttrakhand', 
+    {
+      icon: <MapPin className="text-[#2D384B]" />,
+      title: 'Visit Us',
+      info: 'Abhishek Tower, 1 Subhash Road, Dehradun, Uttrakhand',
       action: '#',
       bgColor: 'bg-[#DDCFCA]/40'
     },
-    { 
-      icon: <Clock className="text-[#2D384B]" />, 
-      title: 'Working Hours', 
-      info: 'Mon - Sat: 10AM - 6PM', 
+    {
+      icon: <Clock className="text-[#2D384B]" />,
+      title: 'Working Hours',
+      info: 'Mon - Sat: 10AM - 6PM',
       action: '#',
       bgColor: 'bg-[#DDCFCA]/40'
     }
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-[#2D384B] relative overflow-hidden">
+    <section id="contact" className="py-16 md:py-24 bg-[#2D384B] border-b border-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-[#2D384B] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
       <div className="absolute top-0 right-0 w-72 h-72 bg-[#DDCFCA] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-8 left-20 w-72 h-72 bg-[#2D384B] rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
-      
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -60,11 +60,11 @@ const Contact = () => {
             <span>Contact Us</span>
             <ArrowRight size={14} />
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6 bg-gradient-to-r from-[#fff] to-[#fff] bg-clip-text text-transparent">
-            Let's Create Something Amazing
+          <h2 className="text-2xl md:text-3xl  font-serif font-bold mb-6 bg-gradient-to-r from-[#fff] to-[#fff] bg-clip-text text-transparent">
+            We welcome the opportunity to collaborate with you on your next interior design project. Reach out to start the conversation.
           </h2>
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-[#fff] leading-relaxed">
-            Ready to transform your space? Let's discuss your project and bring your design dreams to life. 
+            Ready to transform your space? Let's discuss your project and bring your design dreams to life.
             We're here to help you every step of the way.
           </p>
         </div>
@@ -76,11 +76,11 @@ const Contact = () => {
               <h3 className="text-2xl font-bold mb-8 text-[#2D384B]">
                 Get in Touch
               </h3>
-              
+
               <div className="space-y-6">
                 {contactInfo.map((item, idx) => (
-                  <a 
-                    key={idx} 
+                  <a
+                    key={idx}
                     href={item.action}
                     className="flex items-center gap-6 p-4 rounded-2xl transition-all duration-300 hover:shadow-lg shadow-sm hover:scale-105 group"
                   >
@@ -98,12 +98,6 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
-
-              {/* Additional Info */}
-              <div className="mt-8 p-6 bg-[#DDCFCA]/40 rounded-2xl">
-                <h4 className="font-semibold text-[#2D384B] mb-2">Quick Response</h4>
-                <p className="text-sm text-[#2D384B]/80">We typically respond within 2 hours during business hours.</p>
-              </div>
             </div>
           </div>
 
@@ -113,7 +107,7 @@ const Contact = () => {
               {/* Form Background */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#DDCFCA] rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#2D384B]/20 rounded-full translate-y-12 -translate-x-12"></div>
-              
+
               <div className="relative z-10">
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-[#2D384B] mb-2">
@@ -133,22 +127,22 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="relative">
                       <input
-                        type="text" 
-                        name="name" 
-                        placeholder="Full Name *" 
-                        value={formData.name} 
-                        onChange={handleChange} 
+                        type="text"
+                        name="name"
+                        placeholder="Full Name *"
+                        value={formData.name}
+                        onChange={handleChange}
                         required
                         className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60"
                       />
                     </div>
                     <div className="relative">
                       <input
-                        type="email" 
-                        name="email" 
-                        placeholder="Email Address *" 
-                        value={formData.email} 
-                        onChange={handleChange} 
+                        type="email"
+                        name="email"
+                        placeholder="Email Address *"
+                        value={formData.email}
+                        onChange={handleChange}
                         required
                         className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60"
                       />
@@ -157,10 +151,10 @@ const Contact = () => {
 
                   <div className="relative">
                     <input
-                      type="tel" 
-                      name="phone" 
-                      placeholder="Phone Number" 
-                      value={formData.phone} 
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formData.phone}
                       onChange={handleChange}
                       className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60"
                     />
@@ -168,28 +162,24 @@ const Contact = () => {
 
                   <div className="relative">
                     <textarea
-                      name="message" 
-                      placeholder="Tell us about your project... *" 
-                      value={formData.message} 
-                      onChange={handleChange} 
-                      required 
-                      rows="6"
+                      name="message"
+                      placeholder="Tell us about your project... *"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows="4"
                       className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60 resize-none"
                     />
                   </div>
 
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="w-full flex items-center justify-center gap-3 bg-[#2D384B] text-white py-4 px-6 rounded-xl font-semibold hover:bg-[#DDCFCA] hover:text-[#2D384B] hover:shadow-xl transform hover:scale-105 transition-all duration-300 shadow-lg"
                   >
-                    Send Message 
+                    Send Message
                     <Send size={18} className="animate-bounce-horizontal" />
                   </button>
                 </form>
-
-                <p className="text-center text-sm text-[#2D384B]/70 mt-4">
-                  We respect your privacy. Your information is safe with us.
-                </p>
               </div>
             </div>
           </div>

@@ -1,10 +1,10 @@
 import React from 'react';
-import img1 from "../../public/images/Interior Design.webp"
-import img2 from "../../public/images/Interior Styling.jpg"
-import img3 from "../../public/images/Home Staging.jpg"
-import img4 from "../../public/images/Project Management.webp"
-import img5 from "../../public/images/Design Consultation.jpg"
-import img6 from "../../public/images/Color Consultation.png"
+import img1 from "../../../public/images/Interior Design.webp"
+import img2 from "../../../public/images/Interior Styling.jpg"
+import img3 from "../../../public/images/Home Staging.jpg"
+import img4 from "../../../public/images/Project Management.webp"
+import img5 from "../../../public/images/Design Consultation.jpg"
+import img6 from "../../../public/images/Color Consultation.png"
 
 const Services = () => {
   const services = [
@@ -18,7 +18,7 @@ const Services = () => {
       image: img2,
       title: 'Interior Styling',
       description: 'Professional styling services to enhance your existing space. From accessory selection to artwork placement, textile coordination, and final touches, we transform your interiors into a cohesive and stylish environment. Each element is carefully curated to reflect your personality and complement the overall design of your home or office.',
-      features: ['Accessory Selection', 'Artwork Placement', 'Textile Coordination', 'Final Touches']
+      features: ['Artwork Placement', 'Textile Coordination', 'Accessory Selection', 'Final Touches']
     },
     {
       image: img3,
@@ -50,7 +50,7 @@ const Services = () => {
     <section
       id="services"
       className="py-8 md:py-20 relative"
-      style={{ backgroundColor: '#ffffff' }} // white background
+      style={{ backgroundColor: '#ffffff' }}
     >
       <div className="container px-6 md:px-10 mx-auto relative z-10">
         {/* Section Header */}
