@@ -1,21 +1,23 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate()
 
   return (
     <footer className="bg-[#2D384B] text-white py-8 md:py-16 md:pb-4">
       <div className="container px-6 md:px-10 mx-auto">
-        
+
         {/* Top Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          
+
           {/* Company Info */}
           <div>
-            <img src="/whiteLogo.png" className="h-20 mb-4" alt="Studio Kal Logo" />
+            <img src="/logo2.png" className="h-20 mb-4" alt="Studio Kal Logo" />
             <p className="text-[#DDCFCA] leading-relaxed max-w-md">
-              Transforming spaces into beautiful, functional environments that inspire and delight. 
+              Transforming spaces into beautiful, functional environments that inspire and delight.
               Your vision, our expertise, exceptional results.
             </p>
           </div>
@@ -54,15 +56,15 @@ const Footer = () => {
           <div>
             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <nav className="space-y-2">
-              {["Home", "About", "Services", "Portfolio", "Team", "Contact"].map(
+              {[ "About", "Service", "Portfolio", "Contact"].map(
                 (link) => (
-                  <a
+                  <p
                     key={link}
-                    href={`#${link.toLowerCase()}`}
-                    className="block text-[#DDCFCA] hover:text-[#FBC7B8] transition-colors duration-300"
+                    onClick={() => navigate(`/${link.toLowerCase()}`)}
+                    className="block cursor-pointer text-[#DDCFCA] hover:text-[#FBC7B8] transition-colors duration-300"
                   >
                     {link}
-                  </a>
+                  </p>
                 )
               )}
             </nav>

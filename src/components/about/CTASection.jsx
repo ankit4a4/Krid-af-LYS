@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 const CTASection = () => {
+    const navigate = useNavigate()
     return (
         <section className="relative bg-[#2d384b] py-16 md:py-24 overflow-hidden border-b border-white">
             {/* Decorative background circles */}
@@ -19,8 +20,8 @@ const CTASection = () => {
 
                 {/* Button */}
                 <button
-                    href="/contact"
-                    className="inline-block bg-[#ddcfca] text-[#2d384b] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-transparent hover:text-[#ddcfca] border-2 border-[#ddcfca]"
+                    onClick={() => navigate("/contact")}
+                    className="inline-block cursor-pointer bg-[#ddcfca] text-[#2d384b] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-transparent hover:text-[#ddcfca] border-2 border-[#ddcfca]"
                 >
                     Get in Touch
                 </button>

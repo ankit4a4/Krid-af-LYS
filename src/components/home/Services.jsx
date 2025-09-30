@@ -6,6 +6,10 @@ import img4 from "../../../public/images/Project Management.webp"
 import img5 from "../../../public/images/Design Consultation.jpg"
 import img6 from "../../../public/images/Color Consultation.png"
 
+
+
+
+
 const Services = () => {
   const services = [
     {

@@ -56,38 +56,38 @@ const Portfolio = () => {
     { value: 'staging', label: 'Home Staging' }
   ];
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(project => project.category === filter);
 
   return (
     <section id="portfolio" className=" py-8 md:py-20" style={{ backgroundColor: '#ddcfca' }}> {/* bg-neutral-50 */}
       <div className="container mx-auto px-10">
         <div className="text-center mb-16">
-          <h2 
+          <h2
             className="text-4xl md:text-5xl font-serif font-bold mb-6"
-            data-aos="fade-up" 
+            data-aos="fade-up"
             data-aos-duration="1000"
             style={{ color: '#2D384B' }} // text-primary
           >
             Our Portfolio
           </h2>
-          <p 
+          <p
             className="text-lg max-w-2xl mx-auto mb-8"
-            data-aos="fade-up" 
-            data-aos-duration="1000" 
+            data-aos="fade-up"
+            data-aos-duration="1000"
             data-aos-delay="200"
             style={{ color: '#4B5563' }} // text-neutral-600
           >
-            Explore our collection of beautifully designed spaces that showcase 
+            Explore our collection of beautifully designed spaces that showcase
             our commitment to excellence and attention to detail.
           </p>
 
           {/* Filter Buttons */}
-          <div 
+          <div
             className="flex flex-wrap justify-center gap-4 mb-12"
-            data-aos="fade-up" 
-            data-aos-duration="1000" 
+            data-aos="fade-up"
+            data-aos-duration="1000"
             data-aos-delay="400"
           >
             {categories.map((category) => (
@@ -100,12 +100,12 @@ const Portfolio = () => {
                   color: filter === category.value ? '#FFFFFF' : '#4B5563' // text-white / text-neutral-600
                 }}
                 onMouseEnter={(e) => {
-                  if(filter !== category.value) e.currentTarget.style.backgroundColor = '#DDCFCA'; // hover:bg-peach
-                  if(filter !== category.value) e.currentTarget.style.color = '#2D384B'; // hover:text-primary
+                  if (filter !== category.value) e.currentTarget.style.backgroundColor = '#DDCFCA'; // hover:bg-peach
+                  if (filter !== category.value) e.currentTarget.style.color = '#2D384B'; // hover:text-primary
                 }}
                 onMouseLeave={(e) => {
-                  if(filter !== category.value) e.currentTarget.style.backgroundColor = '#FFFFFF';
-                  if(filter !== category.value) e.currentTarget.style.color = '#4B5563';
+                  if (filter !== category.value) e.currentTarget.style.backgroundColor = '#FFFFFF';
+                  if (filter !== category.value) e.currentTarget.style.color = '#4B5563';
                 }}
               >
                 {category.label}
@@ -136,7 +136,7 @@ const Portfolio = () => {
                   }}
                 ></div>
               </div>
-              
+
               <div className="absolute inset-0 flex items-end justify-between p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div style={{ color: '#FFFFFF' }}>
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
