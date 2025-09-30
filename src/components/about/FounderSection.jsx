@@ -30,7 +30,7 @@ const FounderSection = () => {
                         <div className="relative">
                             <div className="absolute hidden md:flex -inset-4 bg-gradient-to-tr from-[#ddcfca] to-[#2d384b] rounded-2xl transform rotate-3 opacity-20"></div>
                             <img
-                                src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                                src="/Founder.webp"
                                 alt="Tanvi Porwal"
                                 className="relative md:h-[400px] rounded-2xl shadow-xl w-full max-w-md object-cover z-10"
                             />

@@ -227,7 +227,6 @@ export default function ServiceDetails() {
                                     >
                                         Book a Consultation
                                     </button>
-
                                 </div>
                             </div>
                         </article>

@@ -16,7 +16,7 @@ const About = () => {
           </div>
           <div className="w-1/2 hidden md:flex items-end">
             <img
-              src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+              src="/Founder.webp"
               alt="Founder"
               className="rounded-2xl md:absolute md:bottom-0 md:right-0 shadow-2xl md:h-[390px] md:w-[49%] object-cover"
             />
