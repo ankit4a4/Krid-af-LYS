@@ -92,14 +92,13 @@ const Header = () => {
           <div className="lg:hidden bg-[#FFFFFF] border-t border-[#3A4A60]">
             <div className="py-4 space-y-4">
               {navLinks.map((link) => (
-                <a
+                <p
                   key={link.href}
-                  href={link.href}
+                  onClick={() => navigate(`${link.href}  ` , setIsMobileMenuOpen(false))}
                   className="block px-4 py-2 text-[#1F2937] hover:text-[#DDCFCA] transition-colors duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </p>
               ))}
             </div>
           </div>
