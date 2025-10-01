@@ -20,7 +20,6 @@ const HeroAbout = () => {
                 <p className="text-lg md:text-2xl mb-6">
                     Crafting timeless spaces with elegance & soul.
                 </p>
-
             </div>
         </section>
     )
