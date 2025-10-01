@@ -15,9 +15,9 @@ const Services = () => {
     {
       image: img1,
       title: 'Interior Design',
-      secondTitle : "hospitality",
+      secondTitle: "Hospitality",
       description: 'Complete interior design solutions for residential and commercial spaces. Our team begins by understanding your lifestyle, preferences, and the functionality you require from each space. We provide meticulous space planning, create harmonious color schemes, select the perfect furniture, and design layouts that maximize comfort and aesthetics. Using advanced 3D visualization, we bring your vision to life before execution. Every project is tailored to your unique taste, ensuring a perfect blend of style, functionality, and elegance.',
-      features: ['Space Planning',  'Furniture Selection', 'Color Schemes', '3D Visualization']
+      features: ['Space Planning', 'Furniture Selection', 'Color Schemes', '3D Visualization']
     },
     {
       image: img2,
@@ -92,14 +92,14 @@ const Services = () => {
 
               {/* Content Section */}
               <div className="w-full md:w-1/2">
-              <div className='flex items-center justify-between'>
+                <div className='flex items-center justify-between'>
                   <h3 className="text-2xl font-semibold mb-4 text-[#2D384B]">
-                  {service.title}
-                </h3>
+                    {service.title}
+                  </h3>
                   <h3 className="text-2xl font-semibold mb-4 text-[#2D384B] md:pr-6">
-                  {service.secondTitle}
-                </h3>
-              </div>
+                    {service.secondTitle}
+                  </h3>
+                </div>
                 <p className="leading-relaxed text-gray-700 mb-4">
                   {service.description}
                 </p>

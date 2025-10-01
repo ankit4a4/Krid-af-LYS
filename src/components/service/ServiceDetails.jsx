@@ -11,6 +11,7 @@ const services = [
     {
         key: "interior-design",
         title: "Interior Design",
+        secondTitle : "Hospitality",
         hero: "Transform Your Space with Premium Interior Design Solutions",
         intro:
             "We create spaces that blend comfort, functionality, and timeless elegance. Our Interior Design service is tailored for homes and commercial spaces, bringing your vision to life through creativity, technical expertise, and meticulous attention to detail.",
