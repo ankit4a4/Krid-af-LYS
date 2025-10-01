@@ -6,14 +6,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: alata;
+  /* font-family: Volte Play Variable; */
   line-height: 1.2;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-p {
-  font-family: alata;
-}
+/* p {
+  font-family: Volte Play Variable;
+} */
 
 [data-aos] {
   pointer-events: none;

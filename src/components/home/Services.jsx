@@ -1,8 +1,8 @@
 import React from 'react';
 import img1 from "../../../public/images/Interior Design.webp"
 import img2 from "../../../public/images/Interior Styling.jpg"
-import img3 from "../../../public/images/Home Staging.jpg"
-import img4 from "../../../public/images/Project Management.webp"
+import img3 from "../../../public/images/Homestaging.jpg"
+import img4 from "../../../public/images/ProjectManagement.jpeg"
 import img5 from "../../../public/images/Design Consultation.jpg"
 import img6 from "../../../public/images/Color Consultation.png"
 
@@ -15,8 +15,9 @@ const Services = () => {
     {
       image: img1,
       title: 'Interior Design',
+      secondTitle : "hospitality",
       description: 'Complete interior design solutions for residential and commercial spaces. Our team begins by understanding your lifestyle, preferences, and the functionality you require from each space. We provide meticulous space planning, create harmonious color schemes, select the perfect furniture, and design layouts that maximize comfort and aesthetics. Using advanced 3D visualization, we bring your vision to life before execution. Every project is tailored to your unique taste, ensuring a perfect blend of style, functionality, and elegance.',
-      features: ['Space Planning', 'Color Schemes', 'Furniture Selection', '3D Visualization']
+      features: ['Space Planning',  'Furniture Selection', 'Color Schemes', '3D Visualization']
     },
     {
       image: img2,
@@ -27,7 +28,7 @@ const Services = () => {
     {
       image: img3,
       title: 'Home Staging',
-      description: "Strategic home staging to maximize your property’s market appeal. We analyze the market trends, choose the right furniture, arrange spaces for optimal flow, and make it photography-ready. Our goal is to highlight your property’s strengths, attract potential buyers, and help you sell faster at the best price.",
+      description: "Strategic home staging to maximize your property’s market appeal.  choose the right furniture, arrange spaces for optimal flow, and make it photography-ready. Our goal is to highlight your property’s strengths, attract potential buyers, and help you sell faster at the best price.",
       features: ['Market Analysis', 'Furniture Rental', 'Photography Ready', 'Quick Turnaround']
     },
     {
@@ -91,9 +92,14 @@ const Services = () => {
 
               {/* Content Section */}
               <div className="w-full md:w-1/2">
-                <h3 className="text-2xl font-semibold mb-4 text-[#2D384B]">
+              <div className='flex items-center justify-between'>
+                  <h3 className="text-2xl font-semibold mb-4 text-[#2D384B]">
                   {service.title}
                 </h3>
+                  <h3 className="text-2xl font-semibold mb-4 text-[#2D384B] md:pr-6">
+                  {service.secondTitle}
+                </h3>
+              </div>
                 <p className="leading-relaxed text-gray-700 mb-4">
                   {service.description}
                 </p>

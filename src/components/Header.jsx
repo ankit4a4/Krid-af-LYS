@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-white/95 backdrop-blur-md shadow-lg'
+        ? 'bg-[#ddcfca] backdrop-blur-md shadow-lg'
         : 'bg-transparent'
         }`}
     >
@@ -49,13 +49,13 @@ const Header = () => {
             />
             <div className="leading-tight">
               <p
-                className={`text-xl md:text-2xl font-bold tracking-wide transition-colors duration-300 ${isScrolled ? 'text-[#1F2937]' : 'text-white'
+                className={`text-xl md:text-2xl  tracking-wide transition-colors duration-300 ${isScrolled ? 'text-[#1F2937]' : 'text-white'
                   }`}
               >
-                Studio Kal
+                STUDIO KAL
               </p>
               <p
-                className={`text-sm md:text-base font-medium transition-colors duration-300 ${isScrolled ? 'text-[#4B5563]' : 'text-gray-200'
+                className={`text-sm md:text-base  transition-colors duration-300 ${isScrolled ? 'text-[#4B5563]' : 'text-gray-200'
                   }`}
               >
                 Crafting Your Future Space

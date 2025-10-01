@@ -63,10 +63,6 @@ const Contact = () => {
           <h2 className="text-2xl md:text-3xl  font-serif font-bold mb-6 bg-gradient-to-r from-[#fff] to-[#fff] bg-clip-text text-transparent">
             We welcome the opportunity to collaborate with you on your next interior design project. Reach out to start the conversation.
           </h2>
-          <p className="text-lg md:text-xl max-w-3xl mx-auto text-[#fff] leading-relaxed">
-            Ready to transform your space? Let's discuss your project and bring your design dreams to life.
-            We're here to help you every step of the way.
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
