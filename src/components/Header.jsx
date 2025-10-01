@@ -69,7 +69,7 @@ const Header = () => {
               <p
                 key={link.href}
                 onClick={() => navigate(`${link.href}`)}
-                className={`font-medium cursor-pointer transition-colors duration-300 hover:text-[#DDCFCA] ${isScrolled ? 'text-[#1F2937]' : 'text-[#FFFFFF]'
+                className={`font-medium cursor-pointer transition-colors duration-300  ${isScrolled ? 'text-[#1F2937]' : 'text-[#FFFFFF]'
                   }`}
               >
                 {link.label}
