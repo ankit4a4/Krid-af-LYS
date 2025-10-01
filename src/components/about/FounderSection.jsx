@@ -24,17 +24,14 @@ const FounderSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center shadow-lg rounded-2xl p-3">
                     {/* Image */}
                     <div className="flex justify-center  relative">
-                        <div className="relative">
-                            <div className="absolute hidden md:flex -inset-4 bg-gradient-to-tr from-[#ddcfca] to-[#2d384b] rounded-2xl transform rotate-3 opacity-20"></div>
-                            <img
-                                src="/Founder.webp"
-                                alt="Tanvi Porwal"
-                                className="relative md:h-[400px] rounded-2xl shadow-xl w-full max-w-md object-cover z-10"
-                            />
-                        </div>
+                        <img
+                            src="/Founder.webp"
+                            alt="Tanvi Porwal"
+                            className="relative md:h-[460px] rounded-2xl shadow-xl w-full object-cover z-10"
+                        />
                     </div>
 
                     {/* Bio */}

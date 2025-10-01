@@ -35,7 +35,7 @@ const Header = () => {
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
         ? 'bg-[#ddcfca] backdrop-blur-md shadow-lg'
-        : 'bg-transparent'
+        : 'bg-[#ddcfca]  backdrop-blur-md shadow-lg'
         }`}
     >
       <nav className="container mx-auto px-6">
@@ -43,19 +43,19 @@ const Header = () => {
           {/* Logo + Company Name */}
           <div className="flex items-center space-x-3">
             <img
-              src={isScrolled ? "/logo.png" : "/logo2.png"}
+              src={isScrolled ? "/logo.png" : "/logo.png"}
               className="h-24 md:h-36"
               alt="Company Logo"
             />
             <div className="leading-tight">
               <p
-                className={`text-xl md:text-2xl  tracking-wide transition-colors duration-300 ${isScrolled ? 'text-[#1F2937]' : 'text-white'
+                className={`text-xl md:text-2xl  tracking-wide transition-colors duration-300 ${isScrolled ? 'text-[#1F2937]' : 'text-[#1F2937]'
                   }`}
               >
                 STUDIO KAL
               </p>
               <p
-                className={`text-sm md:text-base  transition-colors duration-300 ${isScrolled ? 'text-[#4B5563]' : 'text-gray-200'
+                className={`text-sm md:text-base  transition-colors duration-300 ${isScrolled ? 'text-[#4B5563]' : 'text-[#4B5563]'
                   }`}
               >
                 Crafting Your Future Space
@@ -69,7 +69,7 @@ const Header = () => {
               <p
                 key={link.href}
                 onClick={() => navigate(`${link.href}`)}
-                className={`font-medium cursor-pointer transition-colors duration-300  ${isScrolled ? 'text-[#1F2937]' : 'text-[#FFFFFF]'
+                className={`font-medium cursor-pointer transition-colors duration-300  ${isScrolled ? 'text-[#1F2937]' : 'text-[#4B5563]'
                   }`}
               >
                 {link.label}

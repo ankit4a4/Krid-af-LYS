@@ -10,11 +10,11 @@ const AboutUs = () => {
   return (
     <>
       <HeroAbout />
-      <OurStory />
-      <OurPhilosophy />
       <FounderSection />
-       <Services />
-       <CTASection />
+      <OurPhilosophy />
+      <OurStory />
+      <Services />
+      <CTASection />
     </>
   )
 }
