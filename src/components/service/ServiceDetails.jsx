@@ -1,8 +1,8 @@
 import React from "react";
 import img1 from "../../../public/images/Interior Design.webp"
 import img2 from "../../../public/images/Interior Styling.jpg"
-import img3 from "../../../public/images/Home Staging.jpg"
-import img4 from "../../../public/images/Project Management.webp"
+import img3 from "../../../public/images/HomeStaging.jpg"
+import img4 from "../../../public/images/ProjectManagement.jpeg"
 import img5 from "../../../public/images/Design Consultation.jpg"
 import img6 from "../../../public/images/Color Consultation.png"
 import { useNavigate } from "react-router-dom";
@@ -190,7 +190,11 @@ export default function ServiceDetails() {
                             </div>
 
                             <div className="prose lg:prose-lg max-w-none order-2 md:order-1 text-[#2d384b]">
+                                <div className="flex items-center justify-between mb-3">
                                 <h2 className="text-3xl font-bold">{s.title}</h2>
+                                <h2 className="text-3xl font-bold">{s.secondTitle}</h2>
+
+                                </div>
                                 <p className="font-semibold">{s.hero}</p>
                                 <p className="mt-4">{s.intro}</p>
                                 <p className="mt-4 whitespace-pre-line">{s.description}</p>
