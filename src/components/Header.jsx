@@ -9,7 +9,6 @@ const Header = () => {
   const navigate = useNavigate()
   const location = useLocation();
 
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);

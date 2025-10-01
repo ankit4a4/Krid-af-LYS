@@ -3,7 +3,7 @@ import React from 'react'
 const HeroAbout = () => {
     return (
         <section
-            className="relative h-[70vh] bg-center bg-cover flex items-center justify-center text-center"
+            className="relative h-[40vh] md:h-[70vh] bg-center bg-cover flex items-center justify-center text-center"
             style={{
                 backgroundImage:
                     "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80')",

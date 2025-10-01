@@ -42,7 +42,7 @@ const About = () => {
             {/* Founder Image */}
             <div className="md:aspect-[4/3] hidden md:flex overflow-hidden rounded-3xl shadow-2xl">
               <img
-                src="/Founder.webp"
+                src={img}
                 alt="Founder"
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
@@ -55,7 +55,7 @@ const About = () => {
             {/* Philosophy Image */}
             <div className="aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl">
               <img
-                src={img}
+                src="/Founder.webp"
                 alt="Our Philosophy"
                 className="w-full h-full object-cover object-center"
                 loading="lazy"
