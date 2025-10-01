@@ -1,7 +1,7 @@
 import React from 'react';
 import img1 from "../../../public/images/Interior Design.webp"
 import img2 from "../../../public/images/Interior Styling.jpg"
-import img3 from "../../../public/images/Homestaging.jpg"
+import img3 from "../../../public/images/HomeStaging.jpg"
 import img4 from "../../../public/images/ProjectManagement.jpeg"
 import img5 from "../../../public/images/Design Consultation.jpg"
 import img6 from "../../../public/images/Color Consultation.png"
