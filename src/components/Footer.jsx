@@ -15,7 +15,7 @@ const Footer = () => {
 
           {/* Company Info */}
           <div>
-            <img src="/logo2.png" className="h-20 mb-4" alt="Studio Kal Logo" />
+            <img src="/logo2.png" className="h-32 md:h-52 mb-4" alt="Studio Kal Logo" />
             <p className="text-[#DDCFCA] leading-relaxed max-w-md">
               Transforming spaces into beautiful, functional environments that inspire and delight.
               Your vision, our expertise, exceptional results.

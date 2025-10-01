@@ -44,7 +44,7 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <img
               src={isScrolled ? "/logo.png" : "/logo2.png"}
-              className="h-14 md:h-22"
+              className="h-24 md:h-36"
               alt="Company Logo"
             />
             <div className="leading-tight">
@@ -94,7 +94,7 @@ const Header = () => {
               {navLinks.map((link) => (
                 <p
                   key={link.href}
-                  onClick={() => navigate(`${link.href}  ` , setIsMobileMenuOpen(false))}
+                  onClick={() => navigate(`${link.href}  `, setIsMobileMenuOpen(false))}
                   className="block px-4 py-2 text-[#1F2937] hover:text-[#DDCFCA] transition-colors duration-300"
                 >
                   {link.label}
