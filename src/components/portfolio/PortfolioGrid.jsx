@@ -31,7 +31,6 @@ const PortfolioSection = () => {
                 alt={`Project ${index + 1}`}
                 className="w-full h-80 object-cover transform group-hover:scale-110 transition duration-700 ease-out"
               />
-              {/* Hover overlay with only description */}
               <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
                 <p className="text-white text-center px-6">{project.description}</p>
               </div>
