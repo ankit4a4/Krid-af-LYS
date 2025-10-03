@@ -1,17 +1,17 @@
 import React from "react";
-import img1 from "../../../public/images/Interior Design.webp"
+import img1 from "../../../public/images/Interior Design.jpg"
 import img2 from "../../../public/images/Interior Styling.jpg"
-import img3 from "../../../public/images/HomeStaging.jpg"
+import img3 from "../../../public/images/HomeStaging.png"
 import img4 from "../../../public/images/ProjectManagement.jpeg"
 import img5 from "../../../public/images/Design Consultation.jpg"
-import img6 from "../../../public/images/Color Consultation.png"
+import img6 from "../../../public/images/Color Consultation.jpg"
 import { useNavigate } from "react-router-dom";
 
 const services = [
     {
         key: "interior-design",
         title: "Interior Design",
-        secondTitle : "Hospitality",
+        secondTitle: "Hospitality",
         hero: "Transform Your Space with Premium Interior Design Solutions",
         intro:
             "We create spaces that blend comfort, functionality, and timeless elegance. Our Interior Design service is tailored for homes and commercial spaces, bringing your vision to life through creativity, technical expertise, and meticulous attention to detail.",
@@ -180,7 +180,7 @@ export default function ServiceDetails() {
                             className={`grid grid-cols-1 md:grid-cols-2 gap-8 relative items-start`}
                         >
                             <div
-                                className={`order-1 md:sticky top-28 md:order-${idx % 2 === 0 ? "1" : "2"}`}
+                                className={`order-1 md:sticky top-40 md:order-${idx % 2 === 0 ? "1" : "2"}`}
                             >
                                 <img
                                     src={s.image}
@@ -191,8 +191,8 @@ export default function ServiceDetails() {
 
                             <div className="prose lg:prose-lg max-w-none order-2 md:order-1 text-[#2d384b]">
                                 <div className="flex items-center justify-between mb-3">
-                                <h2 className="text-3xl font-bold">{s.title}</h2>
-                                <h2 className="text-3xl font-bold">{s.secondTitle}</h2>
+                                    <h2 className="text-3xl font-bold">{s.title}</h2>
+                                    <h2 className="text-3xl font-bold">{s.secondTitle}</h2>
 
                                 </div>
                                 <p className="font-semibold">{s.hero}</p>

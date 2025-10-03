@@ -58,7 +58,7 @@ const OurStory = () => {
             <div className="relative">
               <div className="absolute hidden md:flex -inset-4 bg-[#2d384b] rounded-2xl transform rotate-3 opacity-20"></div>
               <img
-                src="/logo2.png"
+                src="/images/ourpilocipy.jpg"
                 alt="Founder Tanvi Porwal"
                 className="relative rounded-2xl md:h-[400px] shadow-xl shadow-black w-full max-w-md object-cover z-10"
               />

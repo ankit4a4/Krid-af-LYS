@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
-
+import img from "../../../public/images/HomeStaging.png"
+import img2 from "../../../public/images/hotel.jpeg"
+import img3 from "../../../public/images/Bedroom.jpg"
+import img4 from "../../../public/images/Living Room.jpg"
+import img5 from "../../../public/images/Kithcen2.jpeg"
 const Portfolio = () => {
   const [filter, setFilter] = useState('all');
 
@@ -9,14 +13,14 @@ const Portfolio = () => {
       id: 1,
       title: 'Modern Living Room',
       category: 'residential',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: img4,
       description: 'Contemporary design with clean lines and neutral palette'
     },
     {
       id: 2,
       title: 'Luxury Bedroom Suite',
       category: 'residential',
-      image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: img3,
       description: 'Elegant bedroom with sophisticated color scheme'
     },
     {
@@ -30,21 +34,21 @@ const Portfolio = () => {
       id: 4,
       title: 'Kitchen Renovation',
       category: 'residential',
-      image: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: img5,
       description: 'Modern kitchen with functional layout and style'
     },
     {
       id: 5,
       title: 'Boutique Hotel Lobby',
       category: 'commercial',
-      image: 'https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: img2,
       description: 'Welcoming hotel space with luxury touches'
     },
     {
       id: 6,
       title: 'Home Staging Project',
       category: 'staging',
-      image: 'https://images.pexels.com/photos/1571468/pexels-photo-1571468.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+      image: img,
       description: 'Staged home ready for market success'
     }
   ];
@@ -127,7 +131,7 @@ const Portfolio = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className={`w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110 ${index - 2 ? "object-bottom" : "object-center"}`}
                 />
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
