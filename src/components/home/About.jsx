@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../../public/images/ourpilocipy.jpg";
+import img from "../../../public/logo2.png";
 
 const About = () => {
   return (
@@ -8,12 +8,12 @@ const About = () => {
       className="bg-[#DDCFCA] py-16 md:py-24 px-6 md:px-12 lg:px-20 overflow-hidden"
     >
       <div className="container mx-auto">
-        {/* Split Layout */}
         <div className="flex flex-col xl:flex-row gap-16 xl:gap-20">
-          {/* Left Content */}
+
+          {/* left Content */}
           <div className="xl:w-1/2 space-y-12">
 
-            <div className="aspect-[4/3] md:hidden flex overflow-hidden rounded-3xl shadow-2xl">
+            <div className="aspect-[4/3]  flex overflow-hidden rounded-3xl shadow-2xl">
               <img
                 src="/Founder.webp"
                 alt="Founder"
@@ -40,24 +40,17 @@ const About = () => {
             </div>
 
             {/* Founder Image */}
-            <div className="md:aspect-[4/3] hidden md:flex overflow-hidden rounded-3xl shadow-2xl">
-              <img
-                src={img}
-                alt="Founder"
-                className="w-full h-full object-cover object-center"
-                loading="lazy"
-              />
-            </div>
+
           </div>
 
           {/* Right Content */}
           <div className="xl:w-1/2 space-y-12">
             {/* Philosophy Image */}
-            <div className="aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl">
+            <div className="aspect-[4/3] flex md:hidden items-center justify-center bg-[#2d384b] overflow-hidden rounded-3xl shadow-2xl">
               <img
-                src="/Founder.webp"
+                src={img}
                 alt="Our Philosophy"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-[90%] object-contain "
                 loading="lazy"
               />
             </div>
@@ -83,6 +76,15 @@ const About = () => {
                   uncompromising in quality.
                 </p>
               </div>
+            </div>
+
+            <div className="aspect-[4/3]  hidden md:flex items-center justify-center bg-[#2d384b] overflow-hidden rounded-3xl shadow-2xl">
+              <img
+                src={img}
+                alt="Our Philosophy"
+                className="w-full h-[90%] object-contain "
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

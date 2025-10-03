@@ -1,14 +1,10 @@
 import React from 'react';
-import img1 from "../../../public/images/Interior Design.webp"
+import img1 from "../../../public/images/Interior Design.jpg"
 import img2 from "../../../public/images/Interior Styling.jpg"
-import img3 from "../../../public/images/HomeStaging.jpg"
+import img3 from "../../../public/images/HomeStaging.png"
 import img4 from "../../../public/images/ProjectManagement.jpeg"
 import img5 from "../../../public/images/Design Consultation.jpg"
-import img6 from "../../../public/images/Color Consultation.png"
-
-
-
-
+import img6 from "../../../public/images/Color Consultation.jpg"
 
 const Services = () => {
   const services = [
@@ -23,7 +19,7 @@ const Services = () => {
       image: img2,
       title: 'Interior Styling',
       description: 'Professional styling services to enhance your existing space. From accessory selection to artwork placement, textile coordination, and final touches, we transform your interiors into a cohesive and stylish environment. Each element is carefully curated to reflect your personality and complement the overall design of your home or office.',
-      features: ['Artwork Placement', 'Textile Coordination', 'Accessory Selection', 'Final Touches']
+      features: ['Textile Coordination', 'Artwork Placement', 'Accessory Selection', 'Final Touches']
     },
     {
       image: img3,
@@ -82,24 +78,27 @@ const Services = () => {
               data-aos-delay={index * 100}
             >
               {/* Image Section */}
+              {/* Image Section */}
+              {/* Image Section */}
               <div className="w-full md:w-1/2">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-64 md:h-80 object-cover rounded-md"
+                  className={`w-full h-64 md:h-80 object-cover rounded-md
+      ${index === 0 ? 'object-bottom' : 'object-center'}
+      ${index === services.length - 1 ? 'object-contain' : ''}
+    `}
                 />
               </div>
 
+
+
               {/* Content Section */}
               <div className="w-full md:w-1/2">
-                <div className='flex items-center justify-between'>
-                  <h3 className="text-2xl font-semibold mb-4 text-[#2D384B]">
-                    {service.title}
-                  </h3>
-                  <h3 className="text-2xl font-semibold mb-4 text-[#2D384B] md:pr-6">
-                    {service.secondTitle}
-                  </h3>
-                </div>
+                <h3 className="text-2xl font-semibold mb-4 text-[#2D384B]">
+                  {service.title}
+                </h3>
+
                 <p className="leading-relaxed text-gray-700 mb-4">
                   {service.description}
                 </p>
