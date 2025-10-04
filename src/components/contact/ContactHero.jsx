@@ -3,7 +3,7 @@ import React from 'react';
 const ContactHero = () => {
   return (
     <section
-      className="relative flex items-center justify-center h-96 bg-cover bg-center"
+      className="relative md:mt-34 mt-14 flex items-center justify-center h-96 bg-cover bg-center"
       style={{
         backgroundImage: `url('https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1600')`
       }}

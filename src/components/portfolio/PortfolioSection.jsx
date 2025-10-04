@@ -2,7 +2,7 @@ import React from 'react';
 
 const PortfolioSection = () => {
     return (
-        <section className="relative py-20 md:py-28 flex items-center justify-center overflow-hidden">
+        <section className="relative md:mt-34 mt-14 py-20 md:py-28 flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"

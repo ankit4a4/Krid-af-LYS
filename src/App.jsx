@@ -12,6 +12,10 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 
+import { ToastContainer } from 'react-toastify';
+import SinglePortfolio from './pages/SinglePortfolio';
+
+
 function LayoutWrapper({ children }) {
   const location = useLocation();
 
@@ -40,14 +44,16 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
+        <ToastContainer />
         <LayoutWrapper>
-          <Routes>
+          <Routes >
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/service" element={<Service />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/singleportfolio/:id" element={<SinglePortfolio />} />
           </Routes>
         </LayoutWrapper>
       </div>

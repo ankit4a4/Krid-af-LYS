@@ -3,9 +3,9 @@ import { Image, FolderKanban } from "lucide-react";
 
 const AdminSidebar = () => {
     return (
-        <aside className="fixed left-0 top-0 h-screen w-64 bg-[#1E1E2F] text-white flex flex-col shadow-lg">
+        <aside className="fixed left-0 top-0 h-screen w-[20%] bg-[#1E1E2F] text-white flex flex-col shadow-lg">
             {/* Logo Section */}
-            <div className="flex items-center justify-center py-5 border-b border-white/10">
+            <div className="flex items-center w-[100%] justify-center py-5 border-b border-white/10">
                 <img
                     src="/logo2.png"
                     alt="Company Logo"
