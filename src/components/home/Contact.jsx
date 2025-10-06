@@ -1,18 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, ArrowRight } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState('');
+
+  const formRef = useRef();
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setLoading(true);
+    setResponseMessage('');
+
+
+
+    // Send email using EmailJS
+    emailjs.sendForm(
+      'service_xwcaps4',
+      'template_8qzuy6o',
+      formRef.current,
+      'FKSV08DFvEqD4LCni'
+    ).then((result) => {
+      console.log(result.text);
+      setIsSubmitted(true);
+      setResponseMessage('Thank you! Your message has been sent.');
+      setLoading(false);
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    }).catch((error) => {
+      console.log(error.text);
+      setResponseMessage('Failed to send message. Please try again.');
+      setLoading(false);
+    });
   };
 
   const contactInfo = [
@@ -60,7 +84,7 @@ const Contact = () => {
             <span>Contact Us</span>
             <ArrowRight size={14} />
           </div>
-          <h2 className="text-2xl md:text-3xl  font-serif font-bold mb-6 bg-gradient-to-r from-[#fff] to-[#fff] bg-clip-text text-transparent">
+          <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6 bg-gradient-to-r from-[#fff] to-[#fff] bg-clip-text text-transparent">
             We welcome the opportunity to collaborate with you on your next interior design project. Reach out to start the conversation.
           </h2>
         </div>
@@ -69,26 +93,15 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8">
             <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border border-white/20">
-              <h3 className="text-2xl font-bold mb-8 text-[#2D384B]">
-                Get in Touch
-              </h3>
-
+              <h3 className="text-2xl font-bold mb-8 text-[#2D384B]">Get in Touch</h3>
               <div className="space-y-6">
                 {contactInfo.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.action}
-                    className="flex items-center gap-6 p-4 rounded-2xl transition-all duration-300 hover:shadow-lg shadow-sm hover:scale-105 group"
-                  >
+                  <a key={idx} href={item.action} className="flex items-center gap-6 p-4 rounded-2xl transition-all duration-300 hover:shadow-lg shadow-sm hover:scale-105 group">
                     <div className={`p-4 rounded-2xl ${item.bgColor} group-hover:scale-110 transition-transform`}>
-                      <div className="text-2xl">
-                        {item.icon}
-                      </div>
+                      <div className="text-2xl">{item.icon}</div>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-[#2D384B] group-hover:text-[#2D384B] transition-colors">
-                        {item.title}
-                      </h4>
+                      <h4 className="font-semibold text-[#2D384B] group-hover:text-[#2D384B] transition-colors">{item.title}</h4>
                       <p className="text-[#2D384B]/80 text-sm leading-relaxed">{item.info}</p>
                     </div>
                   </a>
@@ -106,73 +119,64 @@ const Contact = () => {
 
               <div className="relative z-10">
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-[#2D384B] mb-2">
-                    Send Us a Message
-                  </h3>
+                  <h3 className="text-2xl font-bold text-[#2D384B] mb-2">Send Us a Message</h3>
                   <p className="text-[#2D384B]/80">Fill out the form below and we'll get back to you soon.</p>
                 </div>
 
-                {isSubmitted && (
-                  <div className="bg-[#DDCFCA]/60 border border-[#2D384B]/30 text-[#2D384B] p-4 rounded-xl mb-6 flex items-center gap-3 animate-fade-in">
+                {responseMessage && (
+                  <div className={`bg-[#DDCFCA]/60 border border-[#2D384B]/30 text-[#2D384B] p-4 rounded-xl mb-6 flex items-center gap-3 animate-fade-in`}>
                     <div className="w-3 h-3 bg-[#2D384B] rounded-full animate-pulse"></div>
-                    Thank you for your message! We'll get back to you within 2 hours.
+                    {responseMessage}
                   </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="relative">
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Full Name *"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60"
-                      />
-                    </div>
-                    <div className="relative">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email Address *"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="relative">
                     <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number"
-                      value={formData.phone}
+                      type="text"
+                      name="user_name"
+                      placeholder="Full Name *"
+                      value={formData.name}
                       onChange={handleChange}
+                      required
+                      className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60"
+                    />
+                    <input
+                      type="email"
+                      name="user_email"
+                      placeholder="Email Address *"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60"
                     />
                   </div>
 
-                  <div className="relative">
-                    <textarea
-                      name="message"
-                      placeholder="Tell us about your project... *"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows="4"
-                      className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60 resize-none"
-                    />
-                  </div>
+                  <input
+                    type="tel"
+                    name="user_phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60"
+                  />
+
+                  <textarea
+                    name="message"
+                    placeholder="Tell us about your project... *"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="4"
+                    className="w-full p-4 rounded-xl border border-[#DDCFCA] bg-white/50 focus:border-[#2D384B] focus:ring-2 focus:ring-[#2D384B]/30 outline-none transition-all duration-300 placeholder-[#2D384B]/60 resize-none"
+                  />
 
                   <button
                     type="submit"
+                    disabled={loading}
                     className="w-full flex items-center justify-center gap-3 bg-[#2D384B] text-white py-4 px-6 rounded-xl font-semibold hover:bg-[#DDCFCA] hover:text-[#2D384B] hover:shadow-xl transform hover:scale-105 transition-all duration-300 shadow-lg"
                   >
-                    Send Message
+                    {loading ? 'Sending...' : 'Send Message'}
                     <Send size={18} className="animate-bounce-horizontal" />
                   </button>
                 </form>
@@ -184,35 +188,14 @@ const Contact = () => {
 
       {/* Animations */}
       <style jsx>{`
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-        @keyframes bounce-horizontal {
-          0%, 100% { transform: translateX(0); }
-          50% { transform: translateX(4px); }
-        }
-        .animate-bounce-horizontal {
-          animation: bounce-horizontal 1s infinite;
-        }
-        .animate-fade-in {
-          animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(-10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes blob { 0% { transform: translate(0px, 0px) scale(1); } 33% { transform: translate(30px, -50px) scale(1.1); } 66% { transform: translate(-20px, 20px) scale(0.9); } 100% { transform: translate(0px, 0px) scale(1); } }
+        .animate-blob { animation: blob 7s infinite; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+        @keyframes bounce-horizontal { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(4px); } }
+        .animate-bounce-horizontal { animation: bounce-horizontal 1s infinite; }
+        .animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
       `}</style>
     </section>
   );
