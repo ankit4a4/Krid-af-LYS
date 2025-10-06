@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useGetSingleProjectQuery } from '../store/slices/projectSlice';
 
 const SinglePortfolio = () => {
-    const { id } = useParams(); 
-    const { data: projectData, error, isLoading } = useGetSingleProjectQuery(id); 
+    const { id } = useParams();
+    const { data: projectData, error, isLoading } = useGetSingleProjectQuery(id);
 
     if (isLoading) return <div className="text-center mt-10">Loading...</div>;
     if (error) return <div className="text-center mt-10">Error loading project.</div>;
@@ -12,11 +12,10 @@ const SinglePortfolio = () => {
     const images = projectData?.images || [];
 
     return (
-        <div className="w-full">
-            {/* Hero Section */}
+        <div className="w-full md:mt-40 ">
             <div className="relative w-full h-[50vh] md:h-[70vh] md:mt-28 mt-10">
                 <img
-                    src={projectData?.heroImage || "/images/hero-bg.jpg"}
+                    src={projectData?.thumbnail?.imageUrl || ""}
                     alt="Hero Background"
                     className="w-full h-full object-cover"
                 />
@@ -39,7 +38,7 @@ const SinglePortfolio = () => {
                                 {index + 1}
                             </div>
                             <img
-                                src={img.imageUrl || img.src} // handle your API image key
+                                src={img.imageUrl || img.src}
                                 alt={`Portfolio ${index + 1}`}
                                 className="w-full md:h-[400px] object-cover rounded-lg transform group-hover:scale-103 transition-transform duration-300"
                             />
