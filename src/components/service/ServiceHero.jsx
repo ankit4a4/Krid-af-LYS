@@ -4,7 +4,7 @@ import React from 'react';
 const ServiceHero = () => {
   return (
     <section
-      className="relative py-20 md:py-32 flex items-center justify-center bg-cover bg-center bg-no-repeat"
+      className="relative md:mt-34 mt-14 py-20 md:py-32 flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url('https://rumahmebel.id/wp-content/uploads/2023/02/Desain-Interior-Kontemporer.jpg')`,
       }}
